@@ -16,7 +16,7 @@ namespace JabbR.Models.Mapping
                 .HasMaxLength(6);
 
             this.Property(r => r.Topic)
-                .HasMaxLength(80);
+                .HasMaxLength(300);
 
             // Table & Column Mappings
             this.ToTable("ChatRooms");

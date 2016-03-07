@@ -17,7 +17,7 @@ namespace JabbR.Services
         private readonly ApplicationSettings _settings;
 
         private const int NoteMaximumLength = 140;
-        private const int TopicMaximumLength = 80;
+        private const int TopicMaximumLength = 300;
         private const int WelcomeMaximumLength = 200;
 
         // To migrate from previous versions of Jabbr

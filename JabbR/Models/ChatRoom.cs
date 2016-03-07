@@ -15,7 +15,7 @@ namespace JabbR.Models
         [MaxLength(200)]
         public string Name { get; set; }
         public bool Closed { get; set; }
-        [StringLength(80)]
+        [StringLength(300)]
         public string Topic { get; set; }
         [StringLength(200)]
         public string Welcome { get; set; }

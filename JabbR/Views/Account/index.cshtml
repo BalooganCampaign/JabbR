@@ -12,7 +12,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>JabbR - account</title>
+    <title>BCC - account</title>
     @{ 
         WriteLiteral(Bundle.Css()
             .Add("~/Content/bootstrap.min.css")
@@ -27,7 +27,7 @@
     <section id="page" role="application">
         <header id="heading" role="heading">
             <div class="banner" role="banner">
-                <h1>JabbR</h1>
+                <h1>BCC</h1>
             </div>
             <div style="clear: both"></div>
         </header>
@@ -46,7 +46,7 @@
                 <div class="tabbable tabs-left">
                     <ul class="nav nav-tabs">
                         <li class="active"><a href="#profile" data-toggle="tab">@LanguageResources.Account_Profile</a></li>
-                        <li><a href="#changeUsername" data-toggle="tab">@LanguageResources.Account_UserName</a></li>
+<!--                        <li><a href="#changeUsername" data-toggle="tab">@LanguageResources.Account_UserName</a></li>-->
                         <li><a href="#changePassword" data-toggle="tab">@LanguageResources.Account_Pass</a></li>
                         @if (userModel.SocialDetails.ConfiguredProviders.Any())
                         {
@@ -80,7 +80,7 @@
 }
                                             else
                                             {
-                                                <div class="alert alert-info">To set your country, type /flag [iso-3166-2 code] <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2" target="_blank">ISO Reference Chart</a></div>
+                                                <div class="alert alert-info">To set your country, type /flag [iso-3366-2 code] <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2" target="_blank">ISO Reference Chart</a></div>
                                             }
                                         </div>
                                     </div>
@@ -115,29 +115,6 @@
                                     </ul>
                                 </fieldset>
                             }
-                        </div>
-                        <div class="account-details tab-pane hide" id="changeUsername">
-                            <form class="form-horizontal" action="@Url.Content("~/account/changeusername")#changeUsername" method="POST">
-                                @Html.ValidationSummary()
-                                <div class="control-group">
-                                    <label class="control-label" for="username">@LanguageResources.Account_UserName</label>
-                                    <div class="controls">
-                                        @Html.TextBox("username", "input-xlarge", LanguageResources.Account_UserName)
-                                    </div>
-                                </div>
-                                <div class="control-group">
-                                    <label class="control-label" for="confirmUsername">@LanguageResources.Account_UserNameConfirm</label>
-                                    <div class="controls">
-                                        @Html.TextBox("confirmUsername", "input-xlarge", LanguageResources.Account_UserNameConfirm)
-                                    </div>
-                                </div>
-                                <div class="control-group">
-                                    <div class="controls">
-                                        <input type="submit" class="btn" value="@LanguageResources.Account_ChangeUserName" />
-                                    </div>
-                                </div>
-                                @Html.AntiForgeryToken()
-                            </form>
                         </div>
                         <div class="account-details tab-pane hide" id="changePassword">
                             <form class="form-horizontal" action="@passwordUrl#changePassword" method="POST">

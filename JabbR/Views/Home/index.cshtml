@@ -6,7 +6,7 @@
 <html>
 <head>
     <meta charset="UTF-8" />
-    <title>JabbR</title>
+    <title>BCC</title>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="A real-time chat application." />
@@ -180,7 +180,31 @@
         </li>
     </script>
     <script id="new-userlist-template" type="text/x-jquery-tmpl">
+{{if listname=="Room Owners"}}
         <h3 class="userlist-header nav-header">
+            Links
+        </h3><strong><a href="http://baloogancampaign.com" target="_blank">Site</a> <a href="http://wiki.baloogancampaign.com" target="_blank">Wiki</a> <a href="http://forum.baloogancampaign.com" target="_blank">Forum</a><br><a href="http://twitter.com/baloogancamp" target="_blank">Twitter</a> <a href="http://youtube.com/baloogan" target="_blank">YouTube</a> <a href="http://baloogan.tumblr.com" target="_blank">Tumblr</a><br><a href="http://baloogancampaign.com/chatroom-rules/" target="_blank">Chat Rules</a> <a href="http://www.matrixgames.com/forums/tt.asp?forumid=1154" target="_blank">Matrix Forum</a><button onclick="[].forEach.call(document.querySelectorAll('span.gaming'),function(a){if(a.style.display == 'none')a.style.display='block';else a.style.display='none';}); document.getElementById('new-message').focus();" height=10 width=100></button><br><!--<form name="bodySearch" id="bodySearch" class="bodySearch"><input name="search" id="bodySearchInput" /></form>--></strong>
+<span id="gaming-buttons" class="gaming" style="display:none">
+<button class="gaming" onclick="document.getElementById('new-message').value='~poker deal';document.getElementById('send').click(); " >Deal</button>
+<button class="gaming" onclick="document.getElementById('new-message').value='~poker check';document.getElementById('send').click(); "  >Check</button>
+<button class="gaming" onclick="document.getElementById('new-message').value='~poker raise '; document.getElementById('new-message').focus();"  >Raise x</button>
+<button class="gaming" style="background:lightpink;" onclick="document.getElementById('new-message').value='~poker raise 5';document.getElementById('send').click(); "  >Raise 5</button>
+<button class="gaming" style="background:lightblue;"  onclick="document.getElementById('new-message').value='~poker raise 10';document.getElementById('send').click(); "  >Raise 10</button>
+<button class="gaming" style="background:lightgrey;"  onclick="document.getElementById('new-message').value='~poker raise 20';document.getElementById('send').click(); "  >Raise 20</button>
+<button class="gaming" style="background:lightgreen;"  onclick="document.getElementById('new-message').value='~poker raise 25';document.getElementById('send').click(); "  >Raise 25</button>
+<button class="gaming" onclick="document.getElementById('new-message').value='~poker fold';document.getElementById('send').click(); "  >Fold</button>
+<button class="gaming" onclick="document.getElementById('new-message').value='~poker show';document.getElementById('send').click(); "  >Show</button>
+<button class="gaming" onclick="document.getElementById('new-message').value='~poker showlast';document.getElementById('send').click(); "  >Show Last</button>
+<button class="gaming" onclick="document.getElementById('new-message').value='~poker graph';document.getElementById('send').click(); "  >Graph</button>
+<button class="gaming" onclick="document.getElementById('new-message').value='~poker join';document.getElementById('send').click(); "  >Join Table</button>
+<button class="gaming" onclick="document.getElementById('new-message').value='~poker leave_table';document.getElementById('send').click(); "  >Leave Table</button>
+<button class="gaming" onclick="document.getElementById('new-message').value='~poker history';document.getElementById('send').click(); "  >History</button>
+<button class="gaming" onclick="document.getElementById('new-message').value='~poker economy';document.getElementById('send').click(); "  >Economy</button>
+<button class="gaming" onclick="document.getElementById('new-message').value='~poker bank';document.getElementById('send').click(); "  >Bank</button>
+<button class="gaming" onclick="[].forEach.call(document.querySelectorAll('[data-name=AutoBaloogan]'),function(a){  a.style.display='none'; });"  >Declutter</button>
+<button class="gaming" onclick="[].forEach.call(document.querySelectorAll('[data-name=AutoBaloogan]'),function(a){  a.style.display='block'; });"  >Reclutter</button>
+</span>{{/if}}
+<h3 class="userlist-header nav-header">
             <span class="list-name">${listname}</span>
         </h3>
         <div>
@@ -333,7 +357,7 @@
     <section id="page" role="application">
         <header id="heading" role="heading">
             <div class="banner" role="banner">
-                <h1>JabbR</h1>
+                <h1>BCC</h1>
             </div>
             <nav>
                 <ul id="tabs" role="tablist">
@@ -395,7 +419,7 @@
                     <li><a class="sound" title="audible notifications"><i class="icon-sound"></i> @LanguageResources.Client_AudibleNotifications</a></li>
                     <li><a class="richness" title="toggle rich-content"><i class="icon-richness"></i> @LanguageResources.Client_ToggleRichContent</a></li>
                     <li><a class="toast" title="popup notifications" aria-haspopup="true"><i class="icon-toast"></i> @LanguageResources.Client_PopupNotifications</a></li>
-                    <li><a class="download" title="download messages" aria-haspopup="true"><i class="icon-download"></i> @LanguageResources.Client_DownloadMessages</a></li>
+            @if(false){        <li><a class="download" title="download messages" aria-haspopup="true"><i class="icon-download"></i> @LanguageResources.Client_DownloadMessages</a></li>}
                 </ul>
             </div>
             <div id="room-loading">

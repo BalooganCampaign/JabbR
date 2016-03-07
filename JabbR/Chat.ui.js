@@ -2025,9 +2025,22 @@
                 options = { content: options, encoded: false };
             }
 
+//	var suffix = "image";
+	var splitted = options.content.split(" ");
+//	splitted[2] = "<img src=\"" + splitted[2] +"\" />";
+if(splitted.length >= 3){
+if(splitted[2].indexOf(".php.png") > -1){
+options.img = splitted[2];
+}
+if(splitted[2].indexOf(".php.jpg") > -1){
+options.img = splitted[2];
+}
+}
+//	options.content = splitted.join(" ");
             var now = new Date(),
             message = {
                 message: options.encoded ? options.content : ui.processContent(options.content),
+//                message: ui.processContent(options.content), BALOOGAN (ITS NORMAL NOW)
                 type: type,
                 date: now,
                 when: now.formatTime(true),

@@ -38,7 +38,7 @@ namespace JabbR.UploadHandlers
             // Randomize the filename everytime so we don't overwrite files
             string randomFile = Path.GetFileNameWithoutExtension(fileName) +
                                 "_" +
-                                Guid.NewGuid().ToString().Substring(0, 4) + Path.GetExtension(fileName);
+                                Guid.NewGuid().ToString().Replace("-","").Replace("_","") + Path.GetExtension(fileName);
 
 
             if (!Directory.Exists(settings.LocalFileSystemStoragePath))
